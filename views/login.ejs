@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-login</title>
+
+           <!-- web-logo -->
+           <link rel="short icon" href="assets/images/logo/logo.svg" type="x-icon">
+
+           <!-- Logo -->
+               <script src="https://unpkg.com/feather-icons"></script>
+   
+           <!-- fonts -->
+               <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
+       
+           <!-- css-file -->
+               <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+       
+           <!-- media -->
+               <link href="assets/css/media.css" rel="stylesheet" type="text/css">
+       
+</head>
+
+<body>
+    <!-- <div class="cursor"></div>
+    <div class="cursor2"></div> -->
+
+    <div id="cursor"></div>
+    <div id="stalker"></div>
+
+    <div class="form-wrapper">
+        <div class="form-cont">
+            <div class="form-title flex align-items center d-flex">
+                <img src="assets/images/logo/logo.svg" alt="logo">
+
+                <h2>Lineone - Dashboard</h2>
+            </div>
+            <div class="form-text">
+                <form action="/login" method="post">
+                    <div class="user-name rel">
+                        <input type="text"  name="email" placeholder="Username">
+                        <a href="#" class="login-icon abs">
+                            <i data-feather="user"></i>
+                        </a>
+                    </div>
+                    <div class="password rel">
+                        <input type="password" name="pwd" placeholder="Password">
+                        <a href="#" class="login-icon abs">
+                            <i data-feather="lock"></i>
+                        </a>
+                    </div>
+                    <div class="login-btn flex align-items center">
+                        <button type="submit">
+                            LOGIN
+                        </button>
+                    </div>
+                    <div class="sign-up-path text">
+                        <i></p>Don't have Account ? Please <a href="register">sign-up</a></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="jq/jq-script.js"></script>
+
+    <script>
+        feather.replace();
+    </script>
+
+
+    <!-- cursor -->
+    <script>
+        const cursor = document.getElementById("cursor");
+     const stalker = document.getElementById("stalker");
+     document.addEventListener("mousemove", (event) => {
+       const x = event.clientX;
+       const y = event.clientY;
+       cursor.style.transform = `translate(${x}px, ${y}px)`;
+       stalker.style.transform = `translate(${x}px, ${y}px)`;
+     });
+   </script>
+
+</body>
+
+</html>

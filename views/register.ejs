@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin-login</title>
+    
+               <!-- web-logo -->
+               <link rel="short icon" href="assets/images/logo/logo.svg" type="x-icon">
+    
+               <!-- Logo -->
+                   <script src="https://unpkg.com/feather-icons"></script>
+       
+               <!-- fonts -->
+                   <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
+           
+               <!-- css-file -->
+                   <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+           
+               <!-- media -->
+                   <link href="assets/css/media.css" rel="stylesheet" type="text/css">
+           
+    </head>
+
+<body>
+
+    <div id="cursor"></div>
+    <div id="stalker"></div>
+    
+    <div class="signup-form-wrapper">
+        <div class="signup-form-cont">
+            <div class="form-title signup-form-title flex align-items center d-flex">
+                <img src="assets/images/logo/logo.svg" alt="logo">
+
+                <h2>Lineone - Dashboard</h2>
+            </div>
+
+
+
+            <div class="signup-form-text">
+                <form action="/register" method="post" enctype="multipart/form-data" >
+                    <div class="flex">
+                        <div class="name rel" style="margin-right: 10px;">
+                            <input type="text"  name="fname" placeholder="First Name" id="register-fname" >
+                            <a href="#" class="login-icon abs text">
+                                <i data-feather="at-sign"></i>
+                            </a>
+                        </div>
+                        <div class="name rel">
+                            <input type="text"  name="lname" placeholder="Last Name" id="register-lname" >
+                            <a href="#" class="login-icon abs">
+                                <i data-feather="edit"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="e-mail rel">
+                        <input type="text"  name="email" placeholder="Enter Your E-mail..."  id="register-email">
+                        <a href="#" class="login-icon abs">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
+                    <div class="password rel">
+                        <input type="password"  name="pwd" placeholder="Enter Your Password..."  id="register-password">
+                        <a href="#" class="login-icon abs">
+                            <i data-feather="lock"></i>
+                        </a>
+                    </div>
+                    <div class="password rel">
+                        <input type="password"  name="con_pwd" placeholder="Confirm Your Password..."  id="register-password">
+                        <a href="#" class="login-icon abs">
+                            <i data-feather="save"></i>
+                        </a>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="register-fname " style="font-size: 16px; margin-left: 14px;">Upload Profile Image</label>
+                      <input type="file" class="form-control" id="register-fname" name="userImg">
+                      
+                    </div>
+
+                    <div class="login-btn flex align-items center">
+                        <button>
+                            SIgn-IN
+                        </button>
+                    </div>
+                    <div class="login-path text">
+                        <i>Have already an Account ? <a href="login.ejs">Log-in</a></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="jq/jq-script.js"></script>
+
+    <script>
+        feather.replace();
+    </script>
+
+        <!-- cursor -->
+        <script>
+            const cursor = document.getElementById("cursor");
+         const stalker = document.getElementById("stalker");
+         document.addEventListener("mousemove", (event) => {
+           const x = event.clientX;
+           const y = event.clientY;
+           cursor.style.transform = `translate(${x}px, ${y}px)`;
+           stalker.style.transform = `translate(${x}px, ${y}px)`;
+         });
+       </script>
+</body>
+
+</html>

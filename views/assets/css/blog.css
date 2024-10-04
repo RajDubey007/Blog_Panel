@@ -1,0 +1,97 @@
+.titles{
+    font-size: 30px;
+    color: black;
+    font-weight: 700;
+    margin: 40px 0px;
+    text-align: center;
+
+}
+.box6{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.content{
+    width: 40%;
+    /* border: 2px solid gray; */
+    border-radius: 23px;
+    background: linear-gradient(72.5deg, rgb(0, 175, 255) 27.9%, rgb(0, 224, 254) 84.2%);
+    margin: 30px 30px;
+    padding: 0px;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.blog-img{
+    /* max-width: 120px; */
+    border-radius: 23px 23px 15px 15px;
+    object-fit: cover;
+    overflow: hidden;
+    border-bottom: 2px solid white;
+}
+.blog-itam span{
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    margin: 0px 10px;
+    letter-spacing: 2px;
+   
+}
+
+.blog-itam h4{
+    font-size: 23px;
+    color: white;
+    font-weight: 600;
+    margin: 5px 8px;
+}
+.blog-itam p{
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+    margin: 0px 10px;
+    margin-bottom: 20px;
+}
+.add{
+    padding: 10px;
+    border-radius: 15px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add h5{
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+}
+.bicons{
+    margin-top: 8px;
+}
+
+
+/* edit */
+
+.edit{
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+.Delete{
+    padding: 10px;
+    border-radius: 12px;
+    background-color: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+.e1{
+    padding-bottom: 20px;
+}

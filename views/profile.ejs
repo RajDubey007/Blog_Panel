@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineone - CRM Analytics Dashboard</title>
+
+        <!-- web-logo -->
+            <link rel="short icon" href="assets/images/logo/logo.svg" type="x-icon">
+
+        <!-- icons -->
+            <script src="https://unpkg.com/feather-icons"></script>
+          
+        <!-- map -->
+            <link rel="stylesheet" href="assets/css/jqvmap.min.css">
+
+        <!-- fonts -->
+            <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
+    
+        <!-- css-file -->
+            <link href="assets/css/profile.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    
+        <!-- media -->
+            <link href="assets/css/media.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+
+  
+
+    <div id="cursor"></div>
+    <div id="stalker"></div>
+    
+    <div class="page-wrapper">
+
+    <div class="page-wrapper">
+
+
+        <header>
+            <div class="row justify-between">
+                <div class="w-12 b-3 justify-between">
+                    <div class="toggle-icon menu">
+                        <a href="javascript:void(0)" class="grid">
+                            <i data-feather="grid"></i>
+                        </a>
+                    </div>
+
+                    <div class="them-menu ">
+                        <div class="search-bar">
+                            <i data-feather="search"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+
+                        <div class="thems">
+                            <ul>
+                                <li class="mode">
+                                    <a href="javascript:void(0);" class="sun">
+                                        <i data-feather="sun"></i>
+                                    </a>
+                                </li>
+
+                                <li><a href="#" class="bell"><i data-feather="bell"></i>
+
+                                    <a href="#" class="settings" id="btnFullscreen">
+                                        <i data-feather="maximize"></i>
+                                    </a>
+
+                                    <ul class="drop-menu">
+
+                                            <div class="drop-title">
+                                                <div class="heding justify-between">
+                                                    <h3>Notifications</h3>
+                                                    <i data-feather="settings" class="justify-end"></i>
+                                                </div>
+
+                                                <div class="all">
+                                                    <ul>
+                                                        <li>All</li>
+                                                        <li>Alerts</li>
+                                                        <li>Events</li>
+                                                        <li>Logs</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="user"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="calendar"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="figma"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="image"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="calendar"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="share-2"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+                                    </ul>
+                                </a></li>
+                                <li><a href="#" class="command"><i data-feather="command"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="page-body-wrapper">
+            <div class="fixed-bar">
+                
+                <div class="logo">
+                    <a href="#">
+                        <img src="assets/images/fixed-bar/app-logo.svg" alt="fixed-bar" class="l1">
+                    </a> 
+                   
+                    
+                </div>
+                <div class="home">
+                    <ul>
+                        <li>
+                            <a href="index"><i data-feather="home"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="shopping-bag"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="layers"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="codesandbox"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="aperture"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="triangle"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="index" class="home" style="padding-top: 90%; display: flex;left: 8px; align-items: end; position: absolute; bottom: 30px; margin-right: 4%;">
+                    <ul>
+                        <li class="" style="width: 50px; height: 50px; overflow: hidden; object-fit: cover; background-color: #E3E3E3; border-radius: 50%; align-items: center; justify-content: center;">
+                            <img src="<%=userImg%>" width="50" height="50" style="object-fit: cover; overflow: hidden;">
+                        </li>
+                    </ul>
+                </a>
+            </div>
+            <div class="sidebar sidebar-navigation">
+
+                <div class="sidebar-menu">
+                    <h2>Dashboard</h2>
+                    <ul>
+                        <!-- <li>
+                            <a href="#">
+                                CRM Analytics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                orders
+                            </a>
+                        </li> -->
+                        <div class="line"></div>
+                </li>
+
+                <a href="#" class="sidebar-submenu">Analytic
+                    <i data-feather="chevron-down"></i>
+                </a>
+                        <ul class="sidebar-dropdown">
+                            <li>
+                                <a href="#">Cryptocurrency</a>
+                            </li>
+                            <li>
+                                <a href="#">Banking</a>
+                            </li>
+                            <li>
+                                <a href="#">Personal</a>
+                            </li>
+                            <li>
+                                <a href="#">Influencer</a>
+                            </li>
+                            <li>
+                                <a href="#">Travel</a>
+                            </li>
+                            <li>
+                                <a href="#">Education</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                 <h6>orders</h6>
+                <a href="#" class="sidebar-submenu">Banking
+                    <i data-feather="chevron-down"></i>
+                </a>
+                        <ul class="sidebar-dropdown">
+                            <li>
+                                <a href="#">Banking V1</a>
+                            </li>
+                            <li>
+                                <a href="#">Banking V2</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <div class="line"></div>
+                    </ul>
+
+                    <h3>pages</h3> 
+                        <ul>
+                            <li>
+                                <a href="register">Register</a>
+                            </li>
+                            <li>
+                                <a href="login">Login</a>
+                            </li>
+                            <li>
+                                <a href="blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="myblog">My Blog</a>
+                            </li>
+                            <li>
+                                <a href="profile">profile</a>
+                            </li>
+                           
+
+                        </ul>
+                </div>
+            </div>
+
+            <div class="page-body" style="display: flex; align-items: center; justify-content: center;">
+                
+                <div class="box1 box" style="margin-left: 200%;">
+                    <div class="content">
+                      <div class="image" style="border-radius: 50%; overflow: hidden; object-fit: cover;">
+                        <img src="<%=userImg%>" alt="Profile Image" style="max-width: 100px;min-height: 100px;">
+                      </div>
+                      <div class="level">
+                        <span>pro</span>
+                      </div>
+                      <div class="text">
+                        <p class="name"><%=fname%>  <%=lname%></p>
+                        <p class="job_title">Back-End Devloper</p>
+                        <p class="job_discription">Hi, I’m <%=fname%>, a back-end developer with a strong background in [mention any specific technologies or frameworks you use, like Node.js, Python, Java, etc.]. I specialize in building robust APIs, optimizing server performance, and managing databases.</p>
+                      </div>
+                      <div class="icons">
+                        <button>
+                          <ion-icon name="logo-dribbble"></ion-icon>
+                        </button>
+                        <button>
+                          <ion-icon name="logo-instagram"></ion-icon>
+                        </button>
+                        <button>
+                          <ion-icon name="logo-twitter"></ion-icon>
+                        </button>
+                        <button>
+                          <ion-icon name="logo-linkedin"></ion-icon>
+                        </button>
+                        <button>
+                          <ion-icon name="logo-facebook"></ion-icon>
+                        </button>
+                        <button>
+                          <ion-icon name="logo-behance"></ion-icon>
+                        </button>
+                      </div>
+                      <div class="button">
+                        <div>
+                          <button class="message" type="button">Connect</button>
+                        </div> 
+                        
+                    &nbsp; &nbsp;
+                        <div>
+                          <button class="connect" type="button"><a href="./login">LogOut</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                 
+
+            </div>
+          
+        </div>
+    </div>
+    
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/apexcharts.js"></script>
+    <script src="assets/js/jquery.vmap.min.js"></script>
+    <script src="assets/js/jquery.vmap.world.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        feather.replace();
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        // close sidebar
+        $(".toggle-icon").click(function(){
+            $(".sidebar").addClass("close-sidebar");
+        });
+        $(".logo .l1").click(function(){
+            $(".sidebar").removeClass("close-sidebar");
+        });
+        // header sidebar
+        $(".toggle-icon").click(function(){
+            $("header").addClass("header-expand");
+        });
+        $(".logo .l1").click(function(){
+            $("header").removeClass("header-expand");
+        });
+    });
+    
+
+    </script>
+
+    <script>
+    function generate_year_range(start, end) {
+        var years = "";
+        for (var year = start; year <= end; year++) {
+            years += "<option value='" + year + "'>" + year + "</option>";
+        }
+        return years;
+    }
+
+    today = new Date();
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
+    selectYear = document.getElementById("year");
+    selectMonth = document.getElementById("month");
+
+
+    createYear = generate_year_range(1970, 2050);
+    /** or
+     * createYear = generate_year_range( 1970, currentYear );
+     */
+
+    document.getElementById("year").innerHTML = createYear;
+
+    var calendar = document.getElementById("calendar");
+    var lang = calendar.getAttribute('data-lang');
+
+    var months = "";
+    var days = "";
+
+    var monthDefault = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    var dayDefault = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    if (lang == "en") {
+        months = monthDefault;
+        days = dayDefault;
+    } else if (lang == "id") {
+        months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        days = ["Ming", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+    } else if (lang == "fr") {
+        months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+    } else {
+        months = monthDefault;
+        days = dayDefault;
+    }
+
+
+    var $dataHead = "<tr>";
+    for (dhead in days) {
+        $dataHead += "<th data-days='" + days[dhead] + "'>" + days[dhead] + "</th>";
+    }
+    $dataHead += "</tr>";
+
+    //alert($dataHead);
+    document.getElementById("thead-month").innerHTML = $dataHead;
+
+
+    monthAndYear = document.getElementById("monthAndYear");
+    showCalendar(currentMonth, currentYear);
+
+
+
+    function next() {
+        currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+        currentMonth = (currentMonth + 1) % 12;
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function previous() {
+        currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+        currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function jump() {
+        currentYear = parseInt(selectYear.value);
+        currentMonth = parseInt(selectMonth.value);
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function showCalendar(month, year) {
+
+        var firstDay = (new Date(year, month)).getDay();
+
+        tbl = document.getElementById("calendar-body");
+
+
+        tbl.innerHTML = "";
+
+
+        monthAndYear.innerHTML = months[month] + " " + year;
+        selectYear.value = year;
+        selectMonth.value = month;
+
+        // creating all cells
+        var date = 1;
+        for (var i = 0; i < 6; i++) {
+
+            var row = document.createElement("tr");
+
+
+            for (var j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay) {
+                    cell = document.createElement("td");
+                    cellText = document.createTextNode("");
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                } else if (date > daysInMonth(month, year)) {
+                    break;
+                } else {
+                    cell = document.createElement("td");
+                    cell.setAttribute("data-date", date);
+                    cell.setAttribute("data-month", month + 1);
+                    cell.setAttribute("data-year", year);
+                    cell.setAttribute("data-month_name", months[month]);
+                    cell.className = "date-picker";
+                    cell.innerHTML = "<span>" + date + "</span>";
+
+                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                        cell.className = "date-picker selected";
+                    }
+                    row.appendChild(cell);
+                    date++;
+                }
+
+
+            }
+
+            tbl.appendChild(row);
+        }
+
+    }
+
+    function daysInMonth(iMonth, iYear) {
+        return 32 - new Date(iYear, iMonth, 32).getDate();
+    }
+    </script>
+
+        <!-- cursor -->
+        <script>
+            const cursor = document.getElementById("cursor");
+         const stalker = document.getElementById("stalker");
+         document.addEventListener("mousemove", (event) => {
+           const x = event.clientX;
+           const y = event.clientY;
+           cursor.style.transform = `translate(${x}px, ${y}px)`;
+           stalker.style.transform = `translate(${x}px, ${y}px)`;
+         });
+       </script>
+
+     <!-- slider-bar-dropdown  -->
+     <script>
+        $(document).ready(function(){
+             $(".sidebar-submenu").click(function(){
+                 $(this).next().slideToggle();        
+                 $(".sidebar-dropdown").not($(this).next()).slideUp();
+             });
+         });
+
+
+
+
+    </script> 
+
+    <script>
+
+          // change color mode
+
+          $(".mode").click(function(){
+                $("body").toggleClass("dark-only");
+            });
+
+    </script>
+
+
+    <script>
+    function toggleFullscreen(elem) {
+        elem = elem || document.documentElement;
+        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+            if (elem.requestFullscreen) 
+            {
+                elem.requestFullscreen();
+            }
+            else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            } 
+            else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } 
+            else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+        } 
+        else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } 
+            else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            } 
+            else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } 
+            else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+        }
+    }
+
+    document.getElementById("btnFullscreen").addEventListener("click", function () {
+        toggleFullscreen();
+    });
+    </script>
+
+  <!-- chart-1 -->
+    <script>
+        var options = {
+                series: [{
+                name: 'Net Profit',
+                data: [28, 45, 35, 50, 32, 55, 60, 28, 45, 35,50,60]
+                },  {
+                name: 'Free Cash Flow',
+                data: [14, 25, 20, 25, 12, 20, 15, 20, 14,25,20,25]
+                }],
+                chart: {
+
+                  toolbar: {
+                    show: false,
+                },
+                type: 'bar',
+                height: 300,
+                
+                },
+                plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '40%',
+                    endingShape: 'rounded'
+                },
+                },
+                dataLabels: {
+                enabled: false
+                },
+                stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+                },
+                colors: ['#4F46E5', '#0EA5E9'],
+                xaxis: {
+                categories: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nav','Dec'],
+                },
+                yaxis: {
+                  show: false,
+                },
+                fill: {
+                opacity: 1
+                },
+                legend: {
+                   show: false,
+                },
+                grid: {
+                        show: true,
+                        borderColor: '#90A4AE',
+                        strokeDashArray: 0,
+                        position: 'back',
+                        xaxis: {
+                            lines: {
+                                show: false
+                            }
+                        },   
+                        yaxis: {
+                            lines: {
+                                show: false
+                            }
+                        },  
+                      
+                    },
+
+                tooltip: {
+                y: {
+                    formatter: function (val) {
+                    return "$ " + val + " thousands"
+                    }
+                }
+                }
+                };
+
+                var chart = new ApexCharts(document.querySelector("#chart"), options);
+                chart.render();
+            
+
+    </script>
+
+  <!-- chart-2 -->
+    <script>
+
+    var options = {
+        series: [{
+            name: 'series1',
+            data: [31, 40, 28, 51, 42, 109, 100]
+        },],
+        chart: {
+            toolbar: {
+                show: false,
+            },
+            height: 240,
+            type: 'area'
+        },
+        dataLabels: {
+            enabled: false
+        },
+        yaxis: {
+            show: false,
+        },
+        grid: {
+            show: true,
+            borderColor: '#90A4AE',
+            strokeDashArray: 0,
+            position: 'back',
+            xaxis: {
+                lines: {
+                    show: false
+                }
+            },
+            yaxis: {
+                lines: {
+                    show: false
+                }
+            },
+
+        },
+        stroke: {
+            curve: 'smooth'
+        },
+        xaxis: {
+            type: 'datetime',
+            categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+        },
+        tooltip: {
+            x: {
+                format: 'dd/MM/yy HH:mm'
+            },
+        },
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart2"), options);
+    chart.render();
+
+    </script>
+
+  <!-- MAP -->
+    <script>
+    var dataset = {
+af: 0,
+al: 42624,
+dz: 308,
+as: 2240,
+ad: 17469,
+ao: 13416,
+ai: 0,
+aq: 0,
+ag: 19980,
+ar: 4770,
+am: 9568,
+aw: 34560,
+au: 10998,
+at: 12132,
+az: 600,
+bs: 17976,
+bh: 69510,
+bd: 8520,
+bb: 25416,
+by: 4950,
+be: 0,
+bz: 5104,
+bj: 0,
+bm: 19980,
+bt: 4870,
+bo: 8064,
+bq: 33642,
+ba: 24416,
+bw: 2544,
+br: 0,
+io: 4050,
+bn: 8415,
+bg: 0,
+bf: 31542,
+bi: 70290,
+cv: 1310,
+kh: 0,
+cm: 39550,
+ca: 3105,
+ky: 11610,
+cf: 2961,
+td: 2082,
+cl: 0,
+cn: 12740,
+co: 840,
+km: 4158,
+cd: 14784,
+cg: 61632,
+ck: 7568,
+cr: 8560,
+hr: 0,
+cu: 5262,
+cw: 43092,
+cy: 34515,
+cz: 1650,
+dk: 25888,
+dj: 12576,
+dm: 5670,
+do: 1000,
+ec: 45480,
+eg: 24750,
+sv: 10440,
+gq: 0,
+er: 9384,
+ee: 10400,
+sz: 40614,
+et: 8780,
+fk: 30835,
+fo: 7752,
+fj: 9270,
+fi: 17280,
+fr: 420,
+gf: 0,
+pf: 68300,
+ga: 20804,
+gm: 9168,
+ge: 3042,
+de: 8721,
+gh: 1650,
+gi: 3580,
+gr: 33173,
+gl: 0,
+gd: 4784,
+gp: 4784,
+gu: 1376,
+gt: 0,
+gg: 0,
+gn: 7735,
+gw: 24273,
+gy: 38920,
+ht: 29160,
+va: 0,
+hn: 16038,
+hk: 0,
+hu: 3178,
+is: 10955,
+in: 1200,
+id: 10296,
+ir: 19159,
+iq: 10878,
+ie: 32364,
+il: 25792,
+it: 0,
+jm: 13480,
+jp: 3705,
+jo: 7014,
+kz: 8990,
+ke: 0,
+ki: 14784,
+kp: 49350,
+kr: 0,
+kw: 6,
+kg: 35460,
+la: 0,
+lv: 13328,
+lb: 108,
+ls: 21480,
+lr: 4165,
+ly: 3996,
+li: 3850,
+lt: 24556,
+lu: 19890,
+mo: 574,
+mk: 7305,
+mg: 2056,
+mw: 19900,
+my: 5664,
+mv: 18120,
+ml: 2955,
+mt: 4396,
+mh: 40719,
+mq: 13230,
+mr: 68832,
+mu: 0,
+yt: 13160,
+mx: 8992,
+fm: 19800,
+md: 0,
+mc: 16020,
+mn: 0,
+me: 9120,
+ms: 12960,
+ma: 50832,
+mz: 20184,
+mm: 32256,
+na: 1248,
+nr: 8460,
+np: 6468,
+nl: 2184,
+nc: 770,
+nz: 16104,
+ni: 12550,
+ne: 23136,
+ng: 469,
+nu: 8316,
+nf: 2510,
+mp: 2430,
+no: 69600,
+om: 31752,
+pk: 0,
+pw: 0,
+ps: 5460,
+pa: 17415,
+pg: 585,
+py: 8928,
+pe: 20448,
+ph: 0,
+pn: 2478,
+pl: 549,
+pt: 769,
+pr: 11760,
+qa: 2049,
+ro: 3132,
+ru: 2336,
+rw: 21357,
+re: 39555,
+bl: 25596,
+sh: 20664,
+kn: 20560,
+lc: 17983,
+mf: 57960,
+pm: 12960,
+vc: 5936,
+ws: 2466,
+sm: 45306,
+st: 0,
+sa: 0,
+sn: 5364,
+rs: 3310,
+sc: 15500,
+sl: 1260,
+sg: 2952,
+sx: 34944,
+sk: 0,
+si: 6304,
+sb: 2448,
+so: 0,
+za: 15520,
+ss: 50064,
+es: 31430,
+lk: 13335,
+sd: 4992,
+sr: 21200,
+ch: 640,
+se: 17760,
+sy: 23968,
+tw: 9975,
+tj: 0,
+tz: 1618,
+th: 15435,
+tl: 780,
+tg: 24552,
+tk: 512,
+to: 4032,
+tt: 28050,
+tn: 20904,
+tr: 38640,
+tm: 0,
+tc: 39240,
+tv: 80730,
+ug: 36040,
+ua: 2154,
+ae: 2436,
+gb: 0,
+vi: 0,
+us: 55980,
+uy: 4293,
+uz: 1856,
+vu: 26460,
+ve: 9440,
+vn: 27720,
+wf: 2240,
+eh: 17190,
+ye: 31899,
+zm: 0,
+zw: 1456,
+ax: 26892
+};
+
+$("#my-world").vectorMap({
+// Functionality
+
+map: "world_en", // Map Must Be Specified
+enableZoom: false,
+values: dataset,
+
+// Looks
+
+backgroundColor: null,
+borderColor: "#818181",
+borderOpacity: 0.25,
+borderWidth: 1,
+color: "#f4f3f0",
+hoverColor: "#005ace",
+normalizeFunction: "linear",
+scaleColors: ["#b6d6ff", "#005ace"],
+selectedColor: "#888"
+});
+
+    </script>
+
+
+    <script>
+        var options = {
+                series: [44, 55, 41, 17, 15],
+                chart: {
+                    type: 'donut',
+                },
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart5"), options);
+            chart.render();
+    </script>
+</body>
+</html>
