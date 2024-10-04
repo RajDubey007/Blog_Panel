@@ -56,51 +56,17 @@ This project is a Blog Post Panel where users can register, log in, create, read
 
 ### Steps to Install
 
-1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/akradadiya28/Blog_Panel.git
-   cd Blog_Panel
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Set up the environment variables in a `.env` file:
-
-   ```plaintext
-   PORT=3000
-   MONGODB_URI=your_mongodb_connection_string
-   SESSION_SECRET=your_session_secret
-   ```
-
-4. Start the application:
+1. Start the application:
 
    ```bash
    npm start
    ```
 
-5. Open the app in your browser:
+2. Open the app in your browser:
    ```bash
    http://localhost:3000
    ```
-
-## Project Structure
-
-```bash
-/blog-post-panel
- ├── /db # MongoDB database │
- ├── /views # EJS templates for frontend
- ├── /routes # Express.js routes for authentication and blogs
- ├── /controllers # Business logic for handling requests
- ├── /models # Mongoose models (User, Blog)
- ├── /public # Uploaded images for blogs and user profile
- ├── index.js # Main Express.js app file
- └── package.json
-```
 
 ## Learning Points
 
@@ -115,6 +81,4 @@ This project is a Blog Post Panel where users can register, log in, create, read
 - Adding comments functionality to each blog post.
 - Improving error handling and validation.
 
-**Contributors**: [akradadiya28](https://github.com/akradadiya28)
-
-If you have any questions or suggestions, feel free to open an issue or contact me at akradadiya28@gmail.com
+ave any questions or suggestions, feel free to open an issue or contact me at raj7984175615@gmail.com
