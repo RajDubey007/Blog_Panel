@@ -1,5 +1,7 @@
 const blogModel = require('../models/blogModel');
 const fs = require('fs');
+const commentBlogData = require("../models/commentModel");
+const commentModel = require('../models/commentModel');
 
 const blogAdd = (req, res) => {
 
@@ -65,4 +67,66 @@ const blogDelete = async (req, res) => {
     res.redirect('/blog');
 }
 
-module.exports = { blogAdd, blogAddData, blogEdit, blogUpdate, blogDelete };
+
+
+const addComment_con = async (req, res) => {
+    const blogId = req.params.id; 
+
+    const comment = new commentModel({
+        users: req.user._id, 
+        blogs: blogId,
+        text: req.body.comment 
+    });
+
+    console.log("comment" , comment);
+    
+
+    try {
+        await comment.save();
+        await blogs.findByIdAndUpdate(blogId, { $push: { comments: comment._id } });
+        res.redirect('/blog'); 
+    } catch (error) {
+        console.error('Error adding comment:', error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+const myBlogs = async (req, res) => {
+    try {
+        // Fetch comments and populate user data
+        const commentData = await commentBlogData.find({}).populate("user");
+        console.log("commentData", commentData);
+
+        // Fetch blog data
+        const data = await blogModel.find();
+        
+        // Render the EJS view and pass the data
+        res.render("myBlog", { data, commentData });
+    } catch (error) {
+        console.error("Error fetching blog data:", error);
+        res.status(500).send("Server Error");
+    }
+};
+
+const commentBlog = async (req, res) => {
+    try {
+      const obj = new commentBlogData({
+        comment: req.body.comment,
+        user: req.user._id,
+      });
+  
+      console.log("Body Is", obj);
+      const blog = new commentBlogData(obj);
+  
+      await blog.save();
+      res.redirect("/blog");
+      console.log("blog", blog);
+      const blogd = await commentBlogData.find({}).populate("blog");
+      console.log("blogd", blogd);
+    } catch {
+      res.redirect("/blog");
+      console.log("error");
+    }
+  };
+
+module.exports = { blogAdd, blogAddData, blogEdit, blogUpdate, blogDelete , commentBlog  , addComment_con };

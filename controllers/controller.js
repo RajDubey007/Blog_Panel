@@ -9,4 +9,10 @@ const index = async (req, res) => {
 
 }
 
+const indexp = async (req, res) => {
+
+    res.render('index');
+}
+
+
 module.exports = { index };

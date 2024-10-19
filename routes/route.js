@@ -11,6 +11,9 @@ const changePwdCon = require('../controllers/changePwdCon');
 const upload = require('../middleware/multer');
 const passport = require('../middleware/passportConf');
 const isAuth = require('../middleware/isAuth');
+const addTopic = require("../controllers/add_topic_con.js");
+const addSubTopic = require("../controllers/subTopic_Controller.js");
+
 
 router.get('/', isAuth, controller.index);
 
@@ -36,9 +39,40 @@ router.post('/blog-update/:id', upload.single('blogImg'), blogAddCon.blogUpdate)
 
 router.get('/blog-delete/:id', isAuth, blogAddCon.blogDelete);
 
-// router.get('/changepassword', isAuth, changePwdCon.changePassword);
-// router.post('/changePasswordData', changePwdCon.changePasswordData);
+router.get('/changepassword', isAuth, changePwdCon.changePassword);
+router.post('/changePasswordData', changePwdCon.changePasswordData);
 
-// router.get('/forgotPassword', isAuth, changePwdCon.forgotPassword);
+router.get('/forgotPassword', changePwdCon.forgotPassword);
+router.post('/forgotPasswordData', changePwdCon.forgotPasswordData);
+
+router.get('/otp/:id', changePwdCon.otp);
+router.post('/otpCheck/:id', changePwdCon.otpCheck);
+
+router.get('/newPass/:id', changePwdCon.newPass);
+router.post('/newPassWord/:id', changePwdCon.newPassWord);
+
+// add topice
+router.get("/add_TopicForm", addTopic.addToPic);
+router.post("/addTopiceCon", addTopic.addTopic_Con);
+
+// //delete topice
+router.get("/deleteTopicCon/:id", addTopic.deleteTopic_Con);
+
+//addsubtipics
+router.get("/addSubTopicForm", addSubTopic.addSubToPicForm);
+router.post("/addSubTopicCon", addSubTopic.addSubTopic_Con);
+
+// delete subtopic
+router.get("/deleteSubTopicForm/:id", addSubTopic.deleteSubTopic_Con);
+
+// show topic and topics
+router.get("/show_TopicseForm", addSubTopic.showTopics);
+
+
+
+router.get("/addComment", blogAddCon.addComment_con);
+router.post("/addComments", blogAddCon.commentBlog);
+
+// routes.post("/comments", blogAddCon.commentBlog);
 
 module.exports = router;

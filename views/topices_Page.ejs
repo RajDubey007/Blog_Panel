@@ -16,7 +16,7 @@
 
         <!-- fonts -->
             <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
-           
+
         <!-- css-file -->
             <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
@@ -25,8 +25,45 @@
         <!-- media -->
             <link href="assets/css/media.css" rel="stylesheet" type="text/css">
 
+          
             
     
+      <!-- Custom Styles -->
+  <style>
+    .topic{
+      margin-left: 40%;
+    }
+    .form-card {
+      min-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-card h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #343a40;
+    }
+
+    .btn-primary {
+      width: 100%;
+      background-color: #3498db;
+      border-color: #007bff;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    body{
+      overflow-x: hidden;
+    }
+  </style>
+
 </head>
 <body>
     
@@ -188,13 +225,7 @@
                     </ul>
                 </div>
 
-                <a href="profile" class="home" style="padding-top: 90%; display: flex;left: 8px; align-items: end; position: absolute; bottom: 30px; margin-right: 4%;">
-                    <ul>
-                        <li class="" style="width: 50px; height: 50px; overflow: hidden; object-fit: cover; background-color: #E3E3E3; border-radius: 50%; align-items: center; justify-content: center;">
-                            <img src="<%=userImg%>" width="50" height="50" style="object-fit: cover; overflow: hidden;">
-                        </li>
-                    </ul>
-                </a>
+               
             </div>
             <div class="sidebar sidebar-navigation">
 
@@ -258,81 +289,95 @@
                     </ul>
 
                     <h3>pages</h3> 
-                    <ul>
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="register">Register</a>
-                        </li>
-                        <li>
-                            <a href="login">Login</a>
-                        </li>
-                        <li>
-                            <a href="blog">Blog</a>
-                        </li>
-                        <li>
-                            <a href="myblog">My Blog</a>
-                        </li>
-                        <li>
-                            <a href="/add_TopicForm">Blog Topics</a>
-                        </li>
-                        <li>
-                            <a href="/addSubTopicForm">Sub topics</a>
-                        </li>
-                        <!-- <li class="nav-item mb-4"><a href="/add_TopicForm">Topices</a></li>
-                        <li class="nav-item mb-4"><a href="/addSubTopicForm">Sub Topicse</a></li> -->
-                        <li>
-                            <a href="profile">Profile</a>
-                        </li>
-                        <li>
-                            <a href="/changepassword">change-password</a>
-                        </li>
-                        <li>
-                            <a href="/">change</a>
-                        </li>
-    
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="register">Register</a>
+                            </li>
+                            <li>
+                                <a href="login">Login</a>
+                            </li>
+                            <li>
+                                <a href="blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="myblog">My Blog</a>
+                            </li>
+                           
+                            <li>
+                                <a href="/add_TopicForm">Blog Topics</a>
+                            </li>
+                            <li>
+                                <a href="/addSubTopicForm">Sub topics</a>
+                            </li>
+                            <!-- <li class="nav-item mb-4"><a href="/add_TopicForm">Topices</a></li>
+                            <li class="nav-item mb-4"><a href="/addSubTopicForm">Sub Topicse</a></li> -->
+                            <li>
+                                <a href="profile">Profile</a>
+                            </li>
+                            <li>
+                                <a href="/changepassword">change-password</a>
+                            </li>
+                            <li>
+                                <a href="/">change</a>
+                            </li>
+        
 
-                    </ul>
+                        </ul>
                 </div>
             </div>
-            <div class="page-body">
+            <div class="page-body-2">
 
                 <section class="container">
                     <div class="mb-4" style="margin-top: 40px;">
-                        <h2 class="titles">My blog</h2>
-                        <div class="box6">
-                            <% blogData.forEach((blogs)=>{ %>
-                                <div class="content e1">
-                                    <div class="flex blog-img items-center">
-                                        <img src="<%=blogs.path%>" alt="blogs img" class="rounded-t-2xl object-cover max-h-120"
-                                            width="700" height="320px">
-                                    </div>
-                                    <div class="blog-itam">
-                                        <span class="">
-                                            <%=blogs.date%>
-                                        </span>
-                                        <h4 class="">
-                                            <%=blogs.title%>
-                                        </h4>
-                                        <p class="">
-                                            <%=blogs.description%>
-                                        </p>
-    
-                                        <div class="flex">
-                                            <a href="/blog-edit/<%=blogs._id%>"
-                                                class="edit cursor-pointer text-lg text-indigo-600 font-semibold">Edit</a>
-                                      
-                                            <a href="/blog-delete/<%=blogs._id%>"
-                                                class="Delete cursor-pointer text-lg text-red-600 font-semibold">Delete</a>
-                                        </div>
-                                    </div>
+                        <h2 class="titles text-center" style="margin-top: 14%;">Blog Topics</h2>
+                        <div class="signup-form-text">
+                            <form action="/addTopiceCon" method="post">
+                                <div class="name rel" style="margin-right: 10px;">
+                                    <label for="topicSelect" class="form-label" style="font-size: 19px; font-weight: 600; margin-left: 10px;">Select Your Topic</label>
+                                    <input type="text"  name="topicName" placeholder="Enter the Topic" class="form-control" id="register-fname" >
+                                    <a href="#" class="login-icon abs text" style="margin-top: 3%;">
+                                        <i data-feather="edit"></i>
+                                    </a>
                                 </div>
-        
-                                <% }) %>
+            
+                                <div class="login-btn flex align-items center">
+                                    <button>
+                                        Save
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-        
+            
                     </div>
+                </section>
+
+
+                <section>
+                  <div class="view-section">
+                    <h1 class="mb-4 text-center pt-5">View Topics</h1>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <table class="table table-striped bg-dark pt-5" style="min-width: 700px; margin-left: 10%; margin-top: 4%; text-align: center; overflow-x: hidden;">
+                      <thead>
+                        <tr>
+                          <th scope="col">Topics Name</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% add_Topics.forEach((topics) => { %>
+                          <tr class="topic">
+                            <td><%= topics.topicName %></td>
+                            <td><a href="deleteTopicCon/<%= topics._id %>" class="btn btn-danger Delete">Delete</a></td>
+                            </tr>
+                          </tr>
+                          <% }) %>
+                      </tbody>
+                    </table>
+                  </div>
                 </section>
 
             </div>
