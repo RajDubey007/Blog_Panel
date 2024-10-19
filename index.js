@@ -30,8 +30,11 @@ app.use(express.static(path.join(__dirname, 'views')));
 app.use('/', router);
 
 
+app.get('/addCommentCon', (req, res) => {
+    const post = { _id: 'id' }; // Fetch or create your post object
+    res.render('blog', { post }); // Pass the post object to the template
+});
 
-// app.use('/blogs', commentRoutes);
 
 
 app.listen(port, (err) => {

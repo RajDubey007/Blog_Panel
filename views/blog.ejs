@@ -320,33 +320,34 @@
                                             <%=blogs.description%>
                                         </p>
                                         
-                                        <form action="/addComments" method="post" style="position: relative;">
-                                            <input type="text" class="form-control" placeholder="Comment" name="comment" >
-                                            <button type="submit" class="btn btn-outline-primary btn-sm mb-0" style="position: absolute; top: 0; right: 0; height: 40.4px; background-color: white;">Comment</button>
-                                          </form>
-                  
-                                          <%comment.forEach((commentBlog) => { %>
-                                            <tr class="topic">
-                                              <td><%=commentBlog.comment%></td>
-                                            </tr>
-                                            <% }) %>
-                                        
-                                          
-                                        <!-- <div style="display: flex; flex-wrap: wrap; margin-left: 2%;" >
-                                            <div class="password rel" style="margin-top: 4%;">
-                                                <input type="text"  name="comment" placeholder="Add Your comment..."  id="comments" style="padding: 11px; border: 1px solid gray;border-radius: 23px;">
-                                                <a href="#" class="login-icon abs">
-                                                  
-                                                </a>
-                                            </div>
-    
-                                            <div class="login-btn flex align-items center">
-                                                <button  style="padding: 10px 20px; margin-left: 20%;">
-                                                    Add 
-                                                </button>
-                                            </div>
-                                        </div> -->
+                                                <!-- Display comments for this blog -->
+                                                <h5>Comments:</h5>
+                                                <% if (typeof comments !== 'undefined' && comments.length > 0) { %>
+                                                <% comments.forEach(comment => { %>
+                                                    <div class="comment-box">
+                                                    <p><%= comment.comment %></p>
+                                                    </div>
+                                                <% }); %>
+                                                <% } else { %>
+                                                <p>No comments yet.</p>
+                                                <% } %>
+
+
+
+                                                <form class="d-flex" role="search" action="/addCommentCon" method="post">
+                                                   <input type="hidden" name="blogId" value="<%= blogs ? blogs._id : '' %>">
+
+                                                    <input class="form-control me-2" type="search" name="comment" placeholder="comment" aria-label="Search">
+                                                    <button class="btn btn-outline-primary" type="submit">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                                            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+
+
                                     </div>
+
                                 </div>
         
                                 <% }) %>

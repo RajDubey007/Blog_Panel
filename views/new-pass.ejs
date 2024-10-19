@@ -1,111 +1,337 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-<!-- Head -->
-
 <head>
-    <!-- Page Meta Tags-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+    <title>Admin-login</title>
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
-    <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+           <!-- web-logo -->
+           <link rel="short icon" href="assets/images/logo/logo.svg" type="x-icon">
 
-    <!-- Google Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+           <!-- Logo -->
+               <script src="https://unpkg.com/feather-icons"></script>
+   
+           <!-- fonts -->
+               <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
+       
+           <!-- css-file -->
+               <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+       
+           <!-- media -->
+               <link href="assets/css/media.css" rel="stylesheet" type="text/css">
+       
 
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+               <style>
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
 
-    <!-- Fix for custom scrollbar if JS is disabled-->
-    <noscript>
-        <style>
-            /**
-          * Reinstate scrolling for non-JS clients
-          */
-            .simplebar-content-wrapper {
-                overflow: auto;
-            }
-        </style>
-    </noscript>
-
-    <!-- Page Title -->
-    <title>Apollo | Bootstrap 5 HTML Admin Dashboard</title>
-
+                /* login */
+                .form-wrapper,
+                .signup-form-wrapper {
+                  width: 100%;
+                  height: 100vh;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+                
+                .form-cont,
+                .signup-form-cont {
+                  border-radius: 10px;
+                  min-height: 340px;
+                  min-width: 300px;
+                  background-color: var(--white-color);
+                  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                }
+                
+                .form-cont {
+                    border-radius: 10px;
+                    min-height: 300px;
+                    min-width: 350px;
+                    background-color: var(--white-color);
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                  }
+                .signup-form-cont {
+                  height: 550px;
+                  width: 400px;
+                }
+                
+                .form-title,
+                .signup-form-title {
+                  background-color: #32a6ff;
+                  border-radius: 10px 10px 0 0;
+                  padding: 15px;
+                }
+                
+                .form-title img,
+                .signup-form-title img {
+                  width: 42px;
+                  height: 42px;
+                }
+                
+                .form-text,
+                .signup-form-text {
+                  padding: 15px;
+                }
+                .sign-up-path i a, .signup-form-text .login-path i a {
+                    color: blue;
+                }
+                .form-text .user-name input,
+                .form-text .password input,
+                .signup-form-text input {
+                  width: 100%;
+                  border-radius: 50px;
+                  padding: 15px;
+                  font-size: 14px;
+                  border: 1px solid #e9e9e9;
+                  outline: none;
+                  color: #495057;
+                  margin: 10px 0;
+                }
+                
+                .form-text .user-name i,
+                .form-text .password i,
+                .signup-form-text i {
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 50%;
+                  background-color: #018FFA;
+                  line-height: 3;
+                  font-size: 18px;
+                  color: var(--white-color);
+                }
+                
+                .form-text .user-name a,
+                .form-text .password a,
+                .signup-form-text a {
+                  text-align: center;
+                  top: 10px;
+                  right: 0;
+                }
+                
+                .login-btn button{
+                  display: block;
+                  background-color: #018FFA;
+                  color: white;
+                  width: 100%;
+                  text-align: center;
+                  padding: 10px 0;
+                  border-radius: 50px;
+                  border: 2px solid blue;
+                  margin: 20px 0;
+                  transition: all 0.3s ease-in-out;
+                }
+                
+                .login-btn button:hover {
+                  background-color: transparent;
+                  border: 1px solid #018FFA;
+                  color: #018FFA;
+                }
+                
+                .sign-up-path i a,
+                .signup-form-text .login-path i a {
+                  text-decoration: underline;
+                }
+                .sign-up-path i,
+                .signup-form-text .login-path i {
+                  font-size: 12px;
+                  color: #878a99;
+                }
+                .signup-form-text .login-path i {
+                  border-radius: 0;
+                  background: none;
+                }
+                .form-title h2 {
+                    font-size: 18px;
+                    color: var(--white-color);
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 3%;
+                    margin-left: 4%;
+                }
+                .d-flex{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                /* Top Sellers */
+                
+                .Sellers-sec{
+                    background-color: var(--box-color);
+                }
+                body.dark-only .Sellers-sec{
+                    background-color: #202B40;
+                }
+                .Sellers{
+                    margin: 20% 2%;
+                    background-color: var(--fixed-bar-color);
+                    padding: 16px 20px;
+                    border-radius: 12px;
+                    box-shadow:  0 3px 10px 0 rgb(48 46 56 / 6%);
+                }
+                body.dark-only .Sellers{
+                    background-color: var(--box-color);
+                }
+                .title{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .Sellers .title h3{
+                    font-size: 14px;
+                    font-family: 500;
+                    line-height: 20px;
+                    color: rgb(51, 65, 85);
+                    margin-left: 10px;
+                }
+                .Sellers .title span{
+                    font-size: 12px;
+                    font-family: 400;
+                    line-height: 16px;
+                    color: rgb(148, 163, 184);
+                }
+                .Sellers img{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                }
+                .Sellers .mail svg{
+                    color: #4F46E5;
+                    width: 16px;
+                    height: 16px;
+                }
+                .sells-icons{
+                    border-radius: 8px;
+                    width: 27px;
+                    height: 27px;
+                    background-color: #EDECFC;
+                    display: inline-block;
+                    padding: 6px;
+                }
+                .target{
+                    margin-top: 56px;
+                    font-size: 14px;
+                    font-family: 400;
+                    line-height: 18px;
+                    color: rgb(148, 163, 184);
+                }
+                .target h4{
+                    font-size: 19px;
+                    font-family: 300;
+                    line-height: 28px;
+                    color: rgb(51, 65, 85);
+                }
+                .t1{
+                    margin-top: 0px;
+                }
+                
+                .madel{
+                    margin-top: 50px;
+                }
+                .madel svg{
+                    width: 19px;
+                    height: 19px;
+                    color: #647488;
+                    margin-right: 2px;
+                    margin-top: 13px;
+                }
+                .madel-img img{
+                    width: 25px;
+                    height: 25px;
+                }
+                .madel-img{
+                    margin-top: 10px;
+                }
+                body.dark-only .Sellers h3 , body.dark-only .Sellers h4 , body.dark-only .madel svg{
+                    color: rgb(194, 201, 214);
+                }
+                .rel {
+                    position: relative;
+                  }
+                  
+                  .abs {
+                    position: absolute;
+                  }
+                  
+                  .flex {
+                    display: flex;
+                  }
+                  
+                  .wrap {
+                    flex-wrap: wrap;
+                  }
+                
+                  .login-icon {
+                    padding: 13px;
+                  }
+                  .login-icon svg{
+                    width: 21px;
+                    height: 21ōpx;
+                    color: #25a1ff;
+                  }
+                
+                </style>         
 </head>
 
-<body class="">
+<body>
+    <!-- <div class="cursor"></div>
+    <div class="cursor2"></div> -->
 
-    <!-- Main Section-->
-    <section class="d-flex justify-content-center align-items-start vh-100 py-5 px-3 px-md-0">
+    <div id="cursor"></div>
+    <div id="stalker"></div>
 
-        <!-- Login Form-->
-        <div class="d-flex flex-column w-100 align-items-center">
+    <div class="form-wrapper">
+        <div class="form-cont">
+            <div class="form-title flex align-items center d-flex">
+             
 
-            <!-- Logo-->
-            <a href="./index.html" class="d-table mt-5 mb-4 mx-auto">
-                <div class="d-flex align-items-center">
-                    <svg class="f-w-5 me-2 text-primary d-flex align-self-center lh-1"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203.58 182">
-                        <path
-                            d="M101.66,41.34C94.54,58.53,88.89,72.13,84,83.78A21.2,21.2,0,0,1,69.76,96.41,94.86,94.86,0,0,0,26.61,122.3L81.12,0h41.6l55.07,123.15c-12-12.59-26.38-21.88-44.25-26.81a21.22,21.22,0,0,1-14.35-12.69c-4.71-11.35-10.3-24.86-17.53-42.31Z"
-                            fill="currentColor" fill-rule="evenodd" fill-opacity="0.5" />
-                        <path
-                            d="M0,182H29.76a21.3,21.3,0,0,0,18.56-10.33,63.27,63.27,0,0,1,106.94,0A21.3,21.3,0,0,0,173.82,182h29.76c-22.66-50.84-49.5-80.34-101.79-80.34S22.66,131.16,0,182Z"
-                            fill="currentColor" fill-rule="evenodd" />
-                    </svg>
-                    <span class="fw-black text-uppercase tracking-wide fs-6 lh-1">Apollo</span>
-                </div>
-            </a>
-            <!-- Logo-->
-
-            <div class="shadow-lg rounded p-4 p-sm-5 bg-white form">
-                <h3 class="fw-bold">Change Password</h3>
-
-                <!-- Form-->
+                <h2 style="color: white; font-size: 20px; text-align: center;">Lineone - Dashboard</h2>
+            </div>
+            <div class="form-text">
                 <form class="mt-4" action="/newPassWord/<%=id%>" method="post">
-                    <div class="form-group">
+    
+                    <div class="password rel">
                         <label for="forgot-password" class="form-label">New Password</label>
-                        <input type="password" class="form-control" name="pwd" id="forgot-password"
-                            placeholder="Enter New Password">
+                        <input type="text" name="pwd" placeholder="New Password..."  id="register-password">
+                        
                     </div>
-                    <div class="form-group">
+    
+                    <div class="password rel">
                         <label for="forgot-password" class="form-label">Confirm New Password</label>
-                        <input type="password" class="form-control" name="new_pwd" id="forgot-password"
-                            placeholder="Confirm New Password">
+                        <input type="text"  name="new_pwd" placeholder="Confirm New Password..."  id="register-password">
+                       
                     </div>
-                    <button type="submit" class="btn btn-primary d-block w-100 my-4">Reset</button>
+                    <div class="login-btn flex align-items center">
+                        <button>
+                            Change Password
+                        </button>
+                    </div>
                 </form>
-                <!-- / Form-->
-
             </div>
         </div>
-        <!-- / Login Form-->
+    </div>
 
-    </section>
-    <!-- / Main Section-->
 
-    <!-- Theme JS -->
-    <!-- Vendor JS -->
-    <script src="./assets/js/vendor.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="jq/jq-script.js"></script>
 
-    <!-- Theme JS -->
-    <script src="./assets/js/theme.bundle.js"></script>
+    <script>
+        feather.replace();
+    </script>
+
+
+    <!-- cursor -->
+    <script>
+        const cursor = document.getElementById("cursor");
+     const stalker = document.getElementById("stalker");
+     document.addEventListener("mousemove", (event) => {
+       const x = event.clientX;
+       const y = event.clientY;
+       cursor.style.transform = `translate(${x}px, ${y}px)`;
+       stalker.style.transform = `translate(${x}px, ${y}px)`;
+     });
+   </script>
+
 </body>
 
 </html>

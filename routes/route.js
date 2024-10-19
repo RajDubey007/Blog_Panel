@@ -14,7 +14,6 @@ const isAuth = require('../middleware/isAuth');
 const addTopic = require("../controllers/add_topic_con.js");
 const addSubTopic = require("../controllers/subTopic_Controller.js");
 
-
 router.get('/', isAuth, controller.index);
 
 router.get('/register', regCon.register);
@@ -30,6 +29,9 @@ router.get('/logout', logoutCon.logout);
 
 router.get('/blog', isAuth, blogCon.blog);
 router.get('/myblog', isAuth, blogCon.myblog);
+
+//add comments
+router.post("/addCommentCon",isAuth,  blogCon.addComentsCon); 
 
 router.get('/addblog', isAuth, blogAddCon.blogAdd);
 router.post('/addBlogData', upload.single('blogImg'), blogAddCon.blogAddData);
@@ -68,10 +70,6 @@ router.get("/deleteSubTopicForm/:id", addSubTopic.deleteSubTopic_Con);
 // show topic and topics
 router.get("/show_TopicseForm", addSubTopic.showTopics);
 
-
-
-router.get("/addComment", blogAddCon.addComment_con);
-router.post("/addComments", blogAddCon.commentBlog);
 
 // routes.post("/comments", blogAddCon.commentBlog);
 

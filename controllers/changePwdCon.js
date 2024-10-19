@@ -75,10 +75,10 @@ const forgotPasswordData = async (req, res) => {
 
         if (userEmail) {
 
-            // const otp = otpGenerator.generate(4, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false });
-            // console.log("user OTP", otp);
+            const otp = otpGenerator.generate(4, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false });
+            console.log("user OTP", otp);
 
-            // myOTP = otp;
+            myOTP = otp;
 
             const token = randomstring.generate(10);
             console.log("token", token);
@@ -86,14 +86,16 @@ const forgotPasswordData = async (req, res) => {
             await userModel.updateOne({ _id: userEmail._id }, { tokenReset: token });
 
 
-            const link = `http://localhost:3004/newPass/${userEmail._id}`;
+            // const link = `http://localhost:3004/newPass/${userEmail._id}`;
             // console.log("link", link);
 
             const mailOptions = {
                 from: "raj7984175615@gmail.com",
                 to: userEmail.email,
                 subject: "Reset Password",
-                text: `Click on link to reset your password ${link}`,
+                text: `${myOTP}`,
+                // text: `Click on link to reset your password ${link}`,
+            
             };
 
             transpoter.sendMail(mailOptions, (err, data) => {
@@ -101,7 +103,7 @@ const forgotPasswordData = async (req, res) => {
                     console.log("error", err);
                 } else {
                     console.log("Email sent:", data.response);
-                    res.send("Email sent check your email");
+                    // res.send("Email sent check your email");
                     res.redirect(`/otp/${userEmail._id}`);
                 }
             });
