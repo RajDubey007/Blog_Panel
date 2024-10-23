@@ -11,7 +11,7 @@
   <!-- Custom Styles -->
   <style>
     body {
-      background-color: #f4f6f9;
+      background: radial-gradient(circle at 85.4% 50.8%, rgb(14, 72, 222) 0%, rgb(3, 22, 65) 74.2%);
     }
 
     .container {
@@ -44,14 +44,20 @@
     }
 
     .card-header {
-      background-color: #007bff;
+      background-color: orangered;
       color: white;
       font-size: 1.2rem;
       font-weight: bold;
+      padding: 30px;
+     text-transform: uppercase;
     }
 
     .card-body {
       background-color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 18px;
+      
     }
 
     @media (max-width: 768px) {
@@ -68,26 +74,9 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center mb-5">Topics and Subtopics</h1>
+    <h1 class="text-center mb-5 text-white mt-5">Topics and Subtopics</h1>
     <div class="row">
-      <!-- <% topics.forEach((topic) => { %>
-        <div class="col-md-6 col-lg-4">
-          <div class="card topic-container">
-            <div class="card-header">
-              <%= topic.topicName %>
-            </div>
-            <div class="card-body">
-              <ul class="subtopic-list">
-                <% subTopics.forEach((subTopic) => { %>
-                  <% if (subTopic.topicId && subTopic.topicId.toString() === topic._id.toString()) { %>
-                    <li><%= subTopic.subTopicName %></li>
-                  <% } %>
-                <% }); %>
-              </ul>
-            </div>
-          </div>
-        </div>
-      <% }); %> -->
+     
       <% subTopics.forEach((topic) => { %>
         <div class="col-md-6 col-lg-4">
           <div class="card topic-container">
@@ -98,7 +87,7 @@
               <ul class="subtopic-list">
                 <%= topic.subTopicName %>
               </ul>
-              <!-- <a href="deleteSubTopicCon/<%= topic._id %>" class="btn btn-danger">Delete</a> -->
+
             </div>
           </div>
         </div>
