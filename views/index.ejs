@@ -5,47 +5,660 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lineone - CRM Analytics Dashboard</title>
 
+        <!-- web-logo -->
+            <link rel="short icon" href="assets/images/logo/logo.svg" type="x-icon">
 
+        <!-- icons -->
+            <script src="https://unpkg.com/feather-icons"></script>
+          
+        <!-- map -->
+            <link rel="stylesheet" href="assets/css/jqvmap.min.css">
+
+        <!-- fonts -->
+            <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
+    
+        <!-- css-file -->
+            <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    
+        <!-- media -->
+            <link href="assets/css/media.css" rel="stylesheet" type="text/css">
     
 </head>
-<body>
+<body class="loading">
     
-<section>
 
-    <ul>
-        <!-- <li>
-            <a href="/">Home</a>
-        </li> -->
-        <li>
-            <a href="register">Register</a>
-        </li>
-        <li>
-            <a href="login">Login</a>
-        </li>
-        <li>
-            <a href="blog">Blog</a>
-        </li>
-        <li>
-            <a href="myblog">My Blog</a>
-        </li>
-        <li>
-            <a href="/add_TopicForm">Blog Topics</a>
-        </li>
-        <li>
-            <a href="/addSubTopicForm">Sub topics</a>
-        </li>
-        <li>
-            <a href="profile">Profile</a>
-        </li>
-        <li>
-            <a href="/changepassword">change-password</a>
-        </li>
-    </ul>
+    <div class="loader-wrapper">
+        <div class="loader"> 
+          <div class="loader4"></div>
+        </div>
+    </div>
+
+    <div id="cursor"></div>
+    <div id="stalker"></div>
     
-</section>
+    <div class="page-wrapper">
+
+    <div class="page-wrapper">
 
 
+        <header>
+            <div class="row justify-between">
+                <div class="w-12 b-3 justify-between">
+                    <div class="toggle-icon menu">
+                        <a href="javascript:void(0)" class="grid">
+                            <i data-feather="grid"></i>
+                        </a>
+                    </div>
 
+                    <div class="them-menu ">
+                        <div class="search-bar">
+                            <i data-feather="search"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+
+                        <div class="thems">
+                            <ul>
+                                <li class="mode">
+                                    <a href="javascript:void(0);" class="sun">
+                                        <i data-feather="sun"></i>
+                                    </a>
+                                </li>
+
+                                <li><a href="#" class="bell"><i data-feather="bell"></i>
+
+                                    <a href="#" class="settings" id="btnFullscreen">
+                                        <i data-feather="maximize"></i>
+                                    </a>
+
+                                    <ul class="drop-menu">
+
+                                            <div class="drop-title">
+                                                <div class="heding justify-between">
+                                                    <h3>Notifications</h3>
+                                                    <i data-feather="settings" class="justify-end"></i>
+                                                </div>
+
+                                                <div class="all">
+                                                    <ul>
+                                                        <li>All</li>
+                                                        <li>Alerts</li>
+                                                        <li>Events</li>
+                                                        <li>Logs</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="user"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="calendar"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="figma"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="image"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="calendar"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-notification">
+                                                <div class="user-icon">
+                                                    <i data-feather="share-2"></i>
+                                                </div>
+                                                <div class="user-detail">
+                                                    <h4>User Photo Changed</h4>
+                                                    <h6>John Doe changed his avatar photo</h6>
+                                                </div>
+                                            </div>
+                                    </ul>
+                                </a></li>
+                                <li><a href="#" class="command"><i data-feather="command"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="page-body-wrapper">
+            <div class="fixed-bar">
+                
+                <div class="logo">
+                    <a href="#">
+                        <img src="assets/images/fixed-bar/app-logo.svg" alt="fixed-bar" class="l1">
+                    </a> 
+                   
+                    
+                </div>
+                <div class="home">
+                    <ul>
+                        <li>
+                            <a href="#"><i data-feather="home"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="shopping-bag"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="layers"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="codesandbox"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="aperture"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-feather="triangle"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="profile" class="home" style="padding-top: 90%; display: flex;left: 8px; align-items: end; position: absolute; bottom: 30px; margin-right: 4%;">
+                    <ul>
+                        <li class="" style="width: 50px; height: 50px; overflow: hidden; object-fit: cover; background-color: #E3E3E3; border-radius: 50%; align-items: center; justify-content: center;">
+                            <img src="<%=userImg%>" width="50" height="50" style="object-fit: cover; overflow: hidden;">
+                        </li>
+                    </ul>
+                </a>
+            </div>
+            <div class="sidebar sidebar-navigation">
+
+                <div class="sidebar-menu">
+                    <h2>Dashboard</h2>
+                    <ul>
+                        <!-- <li>
+                            <a href="#">
+                                CRM Analytics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                orders
+                            </a>
+                        </li> -->
+                        <div class="line"></div>
+                </li>
+
+                <a href="#" class="sidebar-submenu">Analytic
+                    <i data-feather="chevron-down"></i>
+                </a>
+                        <ul class="sidebar-dropdown">
+                            <li>
+                                <a href="#">Cryptocurrency</a>
+                            </li>
+                            <li>
+                                <a href="#">Banking</a>
+                            </li>
+                            <li>
+                                <a href="#">Personal</a>
+                            </li>
+                            <li>
+                                <a href="#">Influencer</a>
+                            </li>
+                            <li>
+                                <a href="#">Travel</a>
+                            </li>
+                            <li>
+                                <a href="#">Education</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                 <h6>orders</h6>
+                <a href="#" class="sidebar-submenu">Banking
+                    <i data-feather="chevron-down"></i>
+                </a>
+                        <ul class="sidebar-dropdown">
+                            <li>
+                                <a href="#">Banking V1</a>
+                            </li>
+                            <li>
+                                <a href="#">Banking V2</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <div class="line"></div>
+                    </ul>
+
+                    <h3>pages</h3> 
+                        <ul>
+                            <!-- <li>
+                                <a href="/">Home</a>
+                            </li> -->
+                            <li>
+                                <a href="register">Register</a>
+                            </li>
+                            <li>
+                                <a href="login">Login</a>
+                            </li>
+                            <li>
+                                <a href="blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="myblog">My Blog</a>
+                            </li>
+                            <li>
+                                <a href="/add_TopicForm">Blog Topics</a>
+                            </li>
+                            <li>
+                                <a href="/addSubTopicForm">Sub topics</a>
+                            </li>
+                            <li>
+                                <a href="profile">Profile</a>
+                            </li>
+                            <li>
+                                <a href="/changepassword">change-password</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="page-body">
+                <div class="row row-gap-30">
+                    <div class="w-8">
+                        <div class="card-title justify-between">
+                            <div class="card-title-heding">
+                                <h3>
+                                    Sales Overview
+                                </h3>
+                                
+                                
+                            </div>
+
+                            <div class="card-title-box justify-between">
+                                <div class="card-title-btn1">
+                                    Last Month
+                                </div>
+                                <div class="card-title-btn">
+                                    Last Year
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body1 justify-between">
+                            <div class="line-chart">
+                                <i data-feather="pie-chart"></i>
+                                <h4>$6,556.55</h4>
+                                <span>this month</span>
+                                <div id="chart-2"></div>
+                            </div>
+
+                            <div class="card" id="chart">
+    
+                            </div>
+                        </div>
+                    </div>    
+
+                    <div class="w-4">
+                        <div class="income">
+                            <div class="income-box justify-between r1">
+                                <div class="income-icon">
+                                    <h3>$67.6k</h3>
+                                    <h6>Income</h6>
+                                </div>
+                                <div class="income-icons income-i6">
+                                    <i data-feather="credit-card" ></i> 
+                                </div>
+                               
+                            </div>
+    
+                            <div class="income-box justify-between r1">
+                                <div class="income-icon">
+                                    <h3>$12.6k</h3>
+                                    <h6>Completed</h6>
+                                </div>
+                                <div class="income-icons income-i1">
+                                    <i data-feather="globe" ></i> 
+                                </div>
+                            </div>
+
+                            <div class="income-box justify-between r1" style="margin-top: 5%;">
+                                <div class="income-icon">
+                                    <h3>12.6K</h3>
+                                    <h6>Customers web</h6>
+                                </div>
+                                <div class="income-icons income-i5">
+                                    <i data-feather="users" ></i> 
+                                </div>
+                            </div>
+    
+                            <div class="income-box justify-between r1" style="margin-top: 5%;">
+                                <div class="income-icon">
+                                    <h3>26k</h3>
+                                    <h6>Products</h6>
+                                </div>
+                                <div class="income-icons income-i4">
+                                    <i data-feather="package" ></i> 
+                                </div>
+                            </div>
+                            
+                            <div class="income-box justify-between">
+                                <div class="income-icon">
+                                    <h3>143</h3>
+                                    <h6>Pending</h6>
+                                </div>
+                                <div class="income-icons income-i2">
+                                    <i data-feather="clock"></i> 
+                                </div>
+                            </div>
+
+                            <div class="income-box justify-between">
+                                <div class="income-icon">
+                                    <h3>651</h3>
+                                    <h6>Dispatch</h6>
+                                </div>
+                                <div class="income-icons income-i3">
+                                    <i data-feather="truck" ></i> 
+                                </div>
+                            </div>
+                               
+                            <div class="income-box justify-between">
+                                <div class="income-icon">
+                                    <h3>46k</h3>
+                                    <h6>Products</h6>
+                                </div>
+                                <div class="income-icons income-i4">
+                                    <i data-feather="package" ></i> 
+                                </div>
+                            </div>
+    
+                            <div class="income-box justify-between">
+                                <div class="income-icon">
+                                    <h3>8.8K</h3>
+                                    <h6>Customers</h6>
+                                </div>
+                                <div class="income-icons income-i5">
+                                    <i data-feather="users" ></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                        <div class="w-8 Projects-sec">
+                            <div class="Projects-headline justify-between">
+                                <h3>Projects Status</h3>
+                                <i data-feather="more-horizontal"></i>
+                            </div>
+                            
+                            <div class="Project-box">
+                                <div class="w-4 color-border c-b-1">
+                                    <div class="Projects">
+                                        <h2>Web Design</h2>
+                                        <span>Design Learn Management System</span>
+
+                                        <h4 class="c-1">UI/UX Design</h4>
+                                        <h1>%55</h1><span>.23</span><br>
+                                        <span>June 08, 2021</span>
+
+                                        <div class="Projects-img justify-between">
+                                            <div class="pro-img">
+                                                <img src="assets/images/Projects/avatar-20.jpg" alt="1">
+                                                <img src="assets/images/Projects/avatar-6.jpg" alt="2">
+                                                <img src="assets/images/Projects/avatar-7.jpg" alt="3">
+                                            </div>
+                                            <i data-feather="settings"></i>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="w-4 color-border c-b-2">
+                                    <div class="Projects">
+                                        <h2>Mobile App</h2>
+                                        <span>Ecommerce Application</span>
+
+                                        <h4 class="c-2">Ecommerce</h4>
+                                        <h1>%14</h1><span>.84</span><br>
+                                        <span>May 01, 2021</span>
+
+                                        <div class="Projects-img justify-between">
+                                            <div class="pro-img">
+                                                <img src="assets/images/Projects/avatar-11.jpg" alt="1">
+                                                <img src="assets/images/Projects/avatar-17.jpg" alt="2">
+                                                <img src="assets/images/Projects/avatar-10.jpg" alt="3">
+                                            </div>
+                                            <i data-feather="settings"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="w-4 color-border c-b-3">
+                                    <div class="Projects">
+                                        <h2>Design System</h2>
+                                        <span>Create LMS design system on figma</span>
+
+                                        <h4 class="c-3">LMS / Figma</h4>
+                                        <h1>%87</h1><span>.40</span><br>
+                                        <span>September 16, 2021</span>
+
+                                        <div class="Projects-img justify-between">
+                                            <div class="pro-img">
+                                                <img src="assets/images/Projects/avatar-14.jpg" alt="1">
+                                                <img src="assets/images/Projects/avatar-16.jpg" alt="2">
+                                                <img src="assets/images/Projects/avatar-12.jpg" alt="3">
+                                            </div>
+                                            <i data-feather="settings"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="w-3">
+                            <div id="my-world">
+
+                            </div>
+                        </div> 
+                </div>
+
+                <!-- Top Sellers -->
+
+                <div class="row Sellers-sec" style="margin-top: 2%; margin-bottom: 2%;">
+                            <div class="w-3">
+                                <div class="Sellers">
+                                    <div class="title justify-between">
+                                        
+                                        <div class="t-1 d-flex">
+                                            <img src="assets/images/Sellers/avatar-5.jpg" alt="1">
+                                            <h3>Travis Fuller <br> <span>Employee</span> </h3>         
+                                        </div>
+
+                                        <div class="mail">
+                                            <span class="sells-icons"><i  data-feather="twitter"></i></span>
+                                            <span class="sells-icons"><i  data-feather="mail"></i></span>                                           
+                                        </div> 
+
+                                    </div> 
+                                    <div class="target d-flex justify-between">
+                                        <span>sell</span> &nbsp;
+                                        <span>Target</span>
+                                        <span>Clients</span>
+                                    </div>
+                                    <div class="target t1 d-flex justify-between">
+                                        <h4>2348</h4>
+                                        <h4>3000</h4>
+                                        <h4>78</h4>
+                                    </div>
+
+                                    <div class="madel justify-between d-flex">
+                                        <div class="madel-img d-flex">
+                                            <img src="assets/images/Sellers/madel/award-19.svg" alt="1"> &nbsp;&nbsp;&nbsp;
+                                            <img src="assets/images/Sellers/madel/award-2.svg" alt="1">&nbsp;&nbsp;&nbsp;
+                                            <img src="assets/images/Sellers/madel/award-5.svg" alt="1">&nbsp;
+                                        </div>
+                                        <i data-feather="settings"></i>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="w-3">
+                                <div class="Sellers">
+                                    <div class="title justify-between">
+                                        
+                                        <div class="t-1 d-flex">
+                                            <img src="assets/images/Sellers/avatar-6.jpg" alt="1">
+                                            <h3>Alfredo Elliott<br> <span>Contractors
+                                            </span> </h3>         
+                                        </div>
+                                    
+                                        <div class="mail">
+                                            <span class="sells-icons"><i  data-feather="twitter"></i></span>
+                                            <span class="sells-icons"><i  data-feather="mail"></i></span>                                           
+                                        </div> 
+                                                                            
+                                    </div> 
+                                    <div class="target d-flex justify-between">
+                                        <span>sell</span> &nbsp;
+                                        <span>Target</span>
+                                        <span>Clients</span>
+                                    </div>
+                                    <div class="target t1 d-flex justify-between">
+                                        <h4>1451</h4>
+                                        <h4>700</h4>
+                                        <h4>54</h4>
+                                    </div>
+
+                                    <div class="madel justify-between d-flex">
+                                        <div class="madel-img d-flex">
+                                            <img src="assets/images/Sellers/madel/award-1.svg" alt="1"> &nbsp;&nbsp;&nbsp;
+                                            <img src="assets/images/Sellers/madel/award-5.svg" alt="1">&nbsp;&nbsp;&nbsp;
+                                            <img src="assets/images/Sellers/madel/award-9.svg" alt="1">&nbsp;
+                                        </div>
+                                        <i data-feather="settings"></i>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="w-3">
+                                <div class="Sellers">
+                                    <div class="title justify-between">
+                                        
+                                        <div class="t-1 d-flex">
+                                            <img src="assets/images/Sellers/avatar-11.jpg" alt="1">
+                                            <h3>Samantha <br> <span>Contractors
+                                            </span> </h3>         
+                                        </div>
+
+                                        <div class="mail">
+                                            <span class="sells-icons"><i  data-feather="twitter"></i></span>
+                                            <span class="sells-icons"><i  data-feather="mail"></i></span>                                           
+                                        </div> 
+                                                                            
+                                    </div> 
+                                    <div class="target d-flex justify-between">
+                                        <span>sell</span> &nbsp;
+                                        <span>Target</span>
+                                        <span>Clients</span>
+                                    </div>
+                                    <div class="target t1 d-flex justify-between">
+                                        <h4>423</h4>
+                                        <h4>500</h4>
+                                        <h4>16</h4>
+                                    </div>
+
+                                    <div class="madel justify-between d-flex">
+                                        <div class="madel-img d-flex">
+                                            <img src="assets/images/Sellers/madel/award-15.svg" alt="1"> &nbsp;&nbsp;&nbsp;
+                                            <img src="assets/images/Sellers/madel/award-5.svg" alt="1">&nbsp;&nbsp;&nbsp;
+                                            <img src="assets/images/Sellers/madel/award-1.svg" alt="1">&nbsp;
+                                        </div>
+                                        <i data-feather="settings"></i>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="w-3" style="margin-top: 5%;">
+                                <div id="chart5"></div>
+                            </div>
+                </div>
+                      
+                <!-- graf -->   
+
+                <div style="display: flex;">
+                    <div class="w-4" style="margin-top: 3%;">
+                                <div class="card" id="chart2">
+        
+                                </div>
+                    </div>
+    
+                    <div class="w-5" style="margin-left: 26%;">
+            
+                                        <div class="container-calendar">
+                                            <h3 id="monthAndYear"></h3>
+            
+                                            <div class="button-container-calendar">
+                                                <button id="previous" onclick="previous()">&#8249;</button>
+                                                <button id="next" onclick="next()">&#8250;</button>
+                                            </div>
+            
+                                            <table class="table-calendar" id="calendar" data-lang="en">
+                                                <thead id="thead-month"></thead>
+                                                <tbody id="calendar-body"></tbody>
+                                            </table>
+            
+                                            <div class="footer-container-calendar">
+                                                <label for="month">Jump To: </label>
+                                                <select id="month" onchange="jump()">
+                                                    <option value=0>Jan</option>
+                                                    <option value=1>Feb</option>
+                                                    <option value=2>Mar</option>
+                                                    <option value=3>Apr</option>
+                                                    <option value=4>May</option>
+                                                    <option value=5>Jun</option>
+                                                    <option value=6>Jul</option>
+                                                    <option value=7>Aug</option>
+                                                    <option value=8>Sep</option>
+                                                    <option value=9>Oct</option>
+                                                    <option value=10>Nov</option>
+                                                    <option value=11>Dec</option>
+                                                </select>
+                                                <select id="year" onchange="jump()"></select>
+                                            </div>
+            
+                                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/apexcharts.js"></script>
